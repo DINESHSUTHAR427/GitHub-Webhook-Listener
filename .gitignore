@@ -41,8 +41,8 @@ logs/
 Thumbs.db
 
 # Virtual environments
-venv/
-env/
+.venv/
+.env/
 
 # Byte-compiled
 *.pyc
