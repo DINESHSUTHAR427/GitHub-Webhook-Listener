@@ -5,17 +5,12 @@ A production-ready FastAPI server that receives and processes GitHub webhook eve
 Project Explanation: GitHub Webhook Listener
 ---
 How It Works
-┌─────────────┐         ┌──────────────────┐         ┌────────────┐
-│   GitHub    │ ──────► │  FastAPI Server  │ ──────► │ PostgreSQL │
-│  (Events)   │  POST   │  /webhook/github │         │  Database  │
-└─────────────┘         └──────────────────┘         └────────────┘
-                                  │
-                                  ▼
-                         ┌────────────────┐
-                         │ Notifications  │
-                         │ Telegram/Email │
-                         └────────────────┘
----
+flowchart LR
+    A[GitHub Events] -->|POST| B[FastAPI /webhook/github]
+    B --> C[PostgreSQL Database]
+    B --> D[Notifications]
+    D --> E[Telegram]
+    D --> F[Email]
 
 ## Features
 
